@@ -31,7 +31,9 @@ function evaluateHumidity(array, humidity) {
   }) ? 'keep' : 'discard';
 }
 
-function evaluateLogFile(data) {
+function evaluateLogFile(logFile) {
+  const data = logFile.split('\n');
+
   const [, temp, humidity] = data.shift().split(' ');
   const groupedData = {};
   const result = {};
